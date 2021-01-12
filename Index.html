@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="containerbig">
+        <section class="short" style="margin-bottom: 10vh;">
+            <p class="description">SHORT</p>
+            <div class="inputdiv container"><br><input type="number" name="" value="0" id="short1" min="0" onchange="shortChanged()"></div>
+            <p class="description">ATR</p>
+            <div class="inputdiv container"><input type="number" name="" value="0" id="short2" min="0" onchange="shortChanged()"><br></div>
+            <p class="description">TOTAL</p>
+            <div class="inputdiv container"><input class="readonly" type="number" name="" value="0" id="short3" min="0" readonly><br></div>
+        </section>
+        <section class="short">
+            <p class="description">LONG</p>
+            <div class="inputdiv container"><br><input type="number" name="" value="0" id="long1" min="0" onchange="longChanged()"></div>
+            <p class="description">ATR</p>
+            <div class="inputdiv container"><input type="number" name="" value="0" id="long2" min="0" onchange="longChanged()"><br></div>
+            <p class="description">TOTAL</p>
+            <div class="inputdiv container"><input class="readonly" type="number" name="" value="0" id="long3" min="0" readonly><br></div>
+        </section>
+    </div>
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
