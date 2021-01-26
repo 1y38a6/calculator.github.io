@@ -28,7 +28,7 @@ function riskChanged()
     var money = parseFloat($("#risk1").val());
     var inprice = parseFloat($("#risk2").val());
     var out = parseFloat($("#risk3").val());
-    var count = parseFloat(money/(inprice-out));
+    var count = parseFloat(money/(inprice-out)*inprice);
     $("#risk4").val(count);
-    $("#risk5").val(count*inprice);
+    // $("#risk5").val(count*inprice);
 }
