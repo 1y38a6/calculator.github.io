@@ -9,3 +9,9 @@
     font-family: MontserratThin;
     src: url(Montserrat-Light.ttf);
 }
+
+@font-face
+{
+    font-family: Roboto;
+    src: url(Roboto-Regular.ttf);
+}
