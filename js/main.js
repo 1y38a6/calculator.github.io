@@ -32,3 +32,28 @@ function riskChanged()
     $("#risk4").val(count);
     $("#risk5").val(count*inprice);
 }
+
+function PercentChanged()
+{
+    var atr = parseFloat($("#atr1").val());;
+    var price = parseFloat($("#price1").val());;
+    
+    var firstOrder = atr/100*30;
+    // $("#first").val(firstOrder + "%");
+    var betweenOrder = atr/100*20;
+    // $("#between").val(betweenOrder + "%");
+    var longFirstOrderCost = price-price*(firstOrder/100);
+    $("#long1").val(longFirstOrderCost);
+    for(var i = 2; i<6; i++)
+    {
+        longFirstOrderCost-=longFirstOrderCost*(betweenOrder/100);
+        $("#long" + i).val(longFirstOrderCost);
+    }
+    var shortFirstOrderCost = price+price*(firstOrder/100);
+    $("#short1").val(shortFirstOrderCost);
+    for(var i = 2; i<6; i++)
+    {
+        shortFirstOrderCost+=shortFirstOrderCost*(betweenOrder/100);
+        $("#short"+i).val(shortFirstOrderCost);
+    }
+}
