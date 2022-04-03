@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="fonts/fonts.css">
+
     <title>Calculator</title>
 </head>
 <body>
@@ -40,6 +41,41 @@
         </section>
     </div>
     -->
+
+    <div class="containerbig">
+        <section class="short" style="margin-bottom: 10vh;">
+            <p class="description title readonly-description">LONG</p>
+            <p class="description">PRICE</p>
+            <div class="inputdiv container"><br><input type="number" name="" id="longPrice" min="0" onchange="longChangedNew()"></div>
+            <p class="description">STOP %</p>
+            <div class="inputdiv container"><input type="number" value="-0.65" name="" id="longStopPrecent" onchange="longChangedNew()"><br></div>
+            <p class="description">TAKE %</p>
+            <div class="inputdiv container"><input type="number" value="2.65" name="" id="longTakePercent" onchange="longChangedNew()"><br></div>
+            <br><br>
+            <p class="description readonly-description">S/T</p>
+            <div class="inputdiv container"><input class="readonly" type="number" name="" id="longST" readonly><br></div>
+            <p class="description readonly-description">T/P</p>
+            <div class="inputdiv container"><input class="readonly" type="number" name="" id="longTP" readonly><br></div>
+        </section>
+    </div>
+
+    <div class="containerbig">
+        <section class="short" style="margin-bottom: 10vh;">
+            <p class="description title readonly-description">SHORT</p>
+            <p class="description">PRICE</p>
+            <div class="inputdiv container"><br><input type="number" name="" id="shortPrice" min="0" onchange="shortChangedNew()"></div>
+            <p class="description">STOP %</p>
+            <div class="inputdiv container"><input type="number" value="0.65" name="" id="shortStopPrecent" onchange="shortChangedNew()"><br></div>
+            <p class="description">TAKE %</p>
+            <div class="inputdiv container"><input type="number" value="-2.65" name="" id="shortTakePercent" onchange="shortChangedNew()"><br></div>
+            <br><br>
+            <p class="description readonly-description">S/T</p>
+            <div class="inputdiv container"><input class="readonly" type="number" name="" id="shortST" readonly><br></div>
+            <p class="description readonly-description">T/P</p>
+            <div class="inputdiv container"><input class="readonly" type="number" name="" id="shortTP" readonly><br></div>
+        </section>
+    </div>
+
     <div class="containerbig">
         <section class="short" style="margin-bottom: 10vh;">
             <p class="description">RISK</p>
@@ -94,5 +130,12 @@
 
     <script src="js/jQuery.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $("#shortStopPrecent").val(localStorage.getItem("shortStopPrecent", "0.65"));
+        $("#shortTakePercent").val(localStorage.getItem("shortTakePercent", "-2.65"));
+        
+        $("#longStopPrecent").val(localStorage.getItem("longStopPrecent", "-0.65"));
+        $("#longTakePercent").val(localStorage.getItem("longTakePercent", "2.65"));
+    </script>
 </body>
 </html>

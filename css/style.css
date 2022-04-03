@@ -44,6 +44,12 @@ input:focus
     outline: none;
 }
 
+.title
+{
+  font-size: 26px !important;
+  margin-top: -67px !important;
+}
+
 .animals
 {
   margin: 0;

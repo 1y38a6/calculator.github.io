@@ -23,6 +23,32 @@ function coefChanged()
     shortChanged();
 }
 
+function longChangedNew()
+{
+    var price = parseFloat($("#longPrice").val());
+    var stop = parseFloat($("#longStopPrecent").val());
+    var take = parseFloat($("#longTakePercent").val());
+
+    localStorage.setItem("longStopPrecent", stop);
+    localStorage.setItem("longTakePercent", take);
+
+    $("#longST").val(price + (price * stop/100));
+    $("#longTP").val(price + (price * take/100));
+}
+
+function shortChangedNew()
+{
+    var price = parseFloat($("#shortPrice").val());
+    var stop = parseFloat($("#shortStopPrecent").val());
+    var take = parseFloat($("#shortTakePercent").val());
+
+    localStorage.setItem("shortStopPrecent", stop);
+    localStorage.setItem("shortTakePercent", take);
+
+    $("#shortST").val(price + (price * stop/100));
+    $("#shortTP").val(price + (price * take/100));
+}
+
 function riskChanged()
 {
     var money = parseFloat($("#risk1").val());
