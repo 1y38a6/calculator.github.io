@@ -39,6 +39,8 @@ function longChangedNew()
 function shortChangedNew()
 {
     var price = parseFloat($("#shortPrice").val());
+    var plusPrice = price * parseFloat($("#shortAddPricePercent").val())/100;
+    price += plusPrice;
     var stop = parseFloat($("#shortStopPrecent").val());
     var take = parseFloat($("#shortTakePercent").val());
 
@@ -47,6 +49,7 @@ function shortChangedNew()
 
     $("#shortST").val(price + (price * stop/100));
     $("#shortTP").val(price + (price * take/100));
+    $("#shortPP").val(plusPrice);
 }
 
 function riskChanged()

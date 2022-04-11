@@ -69,7 +69,11 @@
             <div class="inputdiv container"><input type="number" value="0.65" name="" id="shortStopPrecent" onchange="shortChangedNew()"><br></div>
             <p class="description">TAKE %</p>
             <div class="inputdiv container"><input type="number" value="-2.65" name="" id="shortTakePercent" onchange="shortChangedNew()"><br></div>
+            <p class="description">PRICE PLUS %</p>
+            <div class="inputdiv container"><input type="number" value="0" name="" id="shortAddPricePercent" onchange="shortChangedNew()"><br></div>
             <br><br>
+            <p class="description readonly-description">PLUS PRICE</p>
+            <div class="inputdiv container"><input class="readonly" type="number" name="" id="shortPP" readonly><br></div>
             <p class="description readonly-description">S/T</p>
             <div class="inputdiv container"><input class="readonly" type="number" name="" id="shortST" readonly><br></div>
             <p class="description readonly-description">T/P</p>
@@ -134,7 +138,8 @@
     <script>
         $("#shortStopPrecent").val(localStorage.getItem("shortStopPrecent", "0.65"));
         $("#shortTakePercent").val(localStorage.getItem("shortTakePercent", "-2.65"));
-        
+        $("#shortAddPricePercent").val(localStorage.getItem("shortAddPricePercent", "0"));
+
         $("#longStopPrecent").val(localStorage.getItem("longStopPrecent", "-0.65"));
         $("#longTakePercent").val(localStorage.getItem("longTakePercent", "2.65"));
     </script>
