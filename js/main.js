@@ -49,7 +49,7 @@ function shortChangedNew()
 
     $("#shortST").val(price + (price * stop/100));
     $("#shortTP").val(price + (price * take/100));
-    $("#shortPP").val(plusPrice);
+    $("#shortPP").val(price);
 }
 
 function riskChanged()
