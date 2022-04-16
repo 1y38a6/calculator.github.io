@@ -26,6 +26,8 @@ function coefChanged()
 function longChangedNew()
 {
     var price = parseFloat($("#longPrice").val());
+    var plusPrice = price * parseFloat($("#longAddPricePercent").val())/100;
+    price += plusPrice;
     var stop = parseFloat($("#longStopPrecent").val());
     var take = parseFloat($("#longTakePercent").val());
 
@@ -34,6 +36,7 @@ function longChangedNew()
 
     $("#longST").val(price + (price * stop/100));
     $("#longTP").val(price + (price * take/100));
+    $("#longPP").val(price);
 }
 
 function shortChangedNew()
