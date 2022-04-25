@@ -33,10 +33,19 @@ function longChangedNew()
 
     localStorage.setItem("longStopPrecent", stop);
     localStorage.setItem("longTakePercent", take);
+    
+    var st = price + (price * stop/100);
+    var tp = price + (price * take/100);
 
     $("#longST").val(price + (price * stop/100));
-    $("#longTP").val(price + (price * take/100));
+    $("#longTP").val(tp);
     $("#longPP").val(price);
+
+    st = Math.round( st * 100000 ) / 100000;
+    tp = Math.round( tp * 100000 ) / 100000;
+
+    var signal = "LONG<br><br>" + $("#longCoin").val() + "<br>Вход " + price + "<br>TP " + tp + "<br>SL " + st;
+    $("#longSignal").html(signal);
 }
 
 function shortChangedNew()
@@ -50,9 +59,18 @@ function shortChangedNew()
     localStorage.setItem("shortStopPrecent", stop);
     localStorage.setItem("shortTakePercent", take);
 
-    $("#shortST").val(price + (price * stop/100));
-    $("#shortTP").val(price + (price * take/100));
+    var st = price + (price * stop/100);
+    var tp = price + (price * take/100);
+
+    $("#shortST").val(st);
+    $("#shortTP").val(tp);
     $("#shortPP").val(price);
+    
+    st = Math.round( st * 100000 ) / 100000;
+    tp = Math.round( tp * 100000 ) / 100000;
+
+    var signal = "SHORT<br><br>" + $("#shortCoin").val() + "<br>Вход " + price + "<br>TP " + tp + "<br>SL " + st;
+    $("#shortSignal").html(signal);
 }
 
 function riskChanged()
