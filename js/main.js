@@ -40,11 +40,12 @@ function longChangedNew()
     $("#longST").val(price + (price * stop/100));
     $("#longTP").val(tp);
     $("#longPP").val(price);
-
+    
+    spricet = Math.round( price * 100000 ) / 100000;
     st = Math.round( st * 100000 ) / 100000;
     tp = Math.round( tp * 100000 ) / 100000;
 
-    var signal = "LONG<br><br>" + $("#longCoin").val() + "<br>Вход " + price + "<br>TP " + tp + "<br>SL " + st;
+    var signal = "LONG<br><br>" + $("#longCoin").val() + "<br>Stop-Market " + price + "<br>TP " + tp + "<br>SL " + st;
     $("#longSignal").html(signal);
 }
 
@@ -66,10 +67,11 @@ function shortChangedNew()
     $("#shortTP").val(tp);
     $("#shortPP").val(price);
     
+    spricet = Math.round( price * 100000 ) / 100000;
     st = Math.round( st * 100000 ) / 100000;
     tp = Math.round( tp * 100000 ) / 100000;
 
-    var signal = "SHORT<br><br>" + $("#shortCoin").val() + "<br>Вход " + price + "<br>TP " + tp + "<br>SL " + st;
+    var signal = "SHORT<br><br>" + $("#shortCoin").val() + "<br>Stop-Market " + price + "<br>TP " + tp + "<br>SL " + st;
     $("#shortSignal").html(signal);
 }
 
