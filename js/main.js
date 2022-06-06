@@ -50,7 +50,7 @@ function longChangedNew()
     var tpString = tp.toString().replace( ".", "," );
 
     var signal = "⬆️LONG⬆️<br><br>" + $("#longCoin").val() + "<br>Stop-Market " + priceString + "<br>TP " + tpString + "<br>SL " + stString;
-    $("#longSignal").html( signal.replace( ".", "," ) );
+    $("#longSignal").html( signal );
 }
 
 function shortChangedNew()
