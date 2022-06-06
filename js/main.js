@@ -45,8 +45,12 @@ function longChangedNew()
     st = Math.round( st * 100000 ) / 100000;
     tp = Math.round( tp * 100000 ) / 100000;
 
-    var signal = "⬆️LONG⬆️<br><br>" + $("#longCoin").val() + "<br>Stop-Market " + price + "<br>TP " + tp + "<br>SL " + st;
-    $("#longSignal").html(signal);
+    var priceString = price.toString().replace( ".", "," );
+    var stString = st.toString().replace( ".", "," );
+    var tpString = tp.toString().replace( ".", "," );
+
+    var signal = "⬆️LONG⬆️<br><br>" + $("#longCoin").val() + "<br>Stop-Market " + priceString + "<br>TP " + tpString + "<br>SL " + stString;
+    $("#longSignal").html( signal.replace( ".", "," ) );
 }
 
 function shortChangedNew()
@@ -67,12 +71,16 @@ function shortChangedNew()
     $("#shortTP").val(tp);
     $("#shortPP").val(price);
     
-     price = Math.round( price * 100000 ) / 100000;
+    price = Math.round( price * 100000 ) / 100000;
     st = Math.round( st * 100000 ) / 100000;
     tp = Math.round( tp * 100000 ) / 100000;
+    
+    var priceString = price.toString().replace( ".", "," );
+    var stString = st.toString().replace( ".", "," );
+    var tpString = tp.toString().replace( ".", "," );
 
-    var signal = "⬇️SHORT⬇️<br><br>" + $("#shortCoin").val() + "<br>Stop-Market " + price + "<br>TP " + tp + "<br>SL " + st;
-    $("#shortSignal").html(signal);
+    var signal = "⬇️SHORT⬇️<br><br>" + $("#shortCoin").val() + "<br>Stop-Market " + priceString + "<br>TP " + tpString + "<br>SL " + stString;
+    $("#shortSignal").html( signal );
 }
 
 function riskChanged()
