@@ -63,9 +63,19 @@ function Signal( name, coin, price, tp, st )
     roundedSt = Round( st );
     roundedTp = Round( tp );
 
-    var priceString = ReplaceDot( roundedPrice );
-    var stString = ReplaceDot( roundedSt );
-    var tpString = ReplaceDot( roundedTp );
+    var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
+
+    var priceString = roundedPrice ;
+    var stString = roundedSt;
+    var tpString = roundedTp;
+    
+    if( isMobile )
+    {
+        priceString = ReplaceDot( roundedPrice );
+        stString = ReplaceDot( roundedSt );
+        tpString = ReplaceDot( roundedTp );
+    }
+
     return signal = name + "<br><br>" + coin + "<br>Stop-Market " + priceString + "<br>TP " + tpString + "<br>SL " + stString;
 }
 
