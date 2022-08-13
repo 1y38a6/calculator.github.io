@@ -135,6 +135,29 @@
         $("#longStopPrecent").val(localStorage.getItem("longStopPrecent", "-0.65"));
         $("#longTakePercent").val(localStorage.getItem("longTakePercent", "2.65"));
         $("#shortAddPricePercent").val(localStorage.getItem("longAddPricePercent", "0"));
+
+        function Copy( elementClass )
+        {
+            var text = $( elementClass ).val();
+            navigator.clipboard.writeText( text );
+        }
+
+        function CopySignal( elementClass )
+        {
+            var text = $( elementClass ).html();
+            var regex = /<br\s*[\/]?>/gi;
+            navigator.clipboard.writeText( text.replace( regex, "\n") );
+        }
+
+        $("#longPP").bind( "click", function() { Copy( "#longPP" ); });
+        $("#longTP").bind( "click", function() { Copy( "#longTP" ); });
+        $("#longST").bind( "click", function() { Copy( "#longST" ); });
+        $("#longSignal").bind( "click", function() { CopySignal( "#longSignal" ); });
+
+        $("#shortPP").bind( "click", function() { Copy( "#shortPP" ); });
+        $("#shortTP").bind( "click", function() { Copy( "#shortTP" ); });
+        $("#shortST").bind( "click", function() { Copy( "#shortST" ); });
+        $("#shortSignal").bind( "click", function() { CopySignal( "#shortSignal" ); });
     </script>
 </body>
 </html>

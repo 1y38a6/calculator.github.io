@@ -46,7 +46,7 @@ function shortChangedNew()
 
 function Take( price, take )
 {
-    return price + ( price * take / 100 );
+    return Round( price + ( price * take / 100 ) );
 }
 
 function PlusPrice( price, isShort )
@@ -81,7 +81,7 @@ function Signal( name, coin, price, tp, st )
 
 function Round( num )
 {
-    return Math.round( num * 100000 ) / 100000;
+    return Math.round( num * 100 ) / 100;
 }
 
 function ReplaceDot( str )
