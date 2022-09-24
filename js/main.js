@@ -69,12 +69,14 @@ function Signal( name, coin, price, tp, st )
     var stString = roundedSt;
     var tpString = roundedTp;
     
+    /*
     if( isMobile )
     {
         priceString = ReplaceDot( roundedPrice );
         stString = ReplaceDot( roundedSt );
         tpString = ReplaceDot( roundedTp );
     }
+    */
 
     return signal = name + "<br><br>" + coin + "<br>Stop-Market " + priceString + "<br>TP " + tpString + "<br>SL " + stString;
 }
