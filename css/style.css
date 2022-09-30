@@ -116,6 +116,34 @@ input:focus
     position: absolute;
 }
 
+.button
+{
+  background-color: #202A51;
+  color: white;
+  min-height: 40px;
+  border-radius: 22px;
+  padding: 13px 39px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Roboto;
+  border: none;
+  text-align: center;
+
+  transition: ease-in-out 200ms;
+
+  transform: scale( 1 );
+}
+
+.button:hover
+{
+  background-color: #3d466b;
+}
+
+.button:active
+{
+  transform: scale( 0.9 );
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

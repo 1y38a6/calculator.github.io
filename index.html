@@ -42,6 +42,7 @@
             <br><br>
             <p class="description readonly-description">Signal</p>
             <p class="inputdiv container signal" id="longSignal"></p>
+            <div class="container"><button class="button" id="longCopy">COPY</button></div>
         </section>
     </div>
 
@@ -70,6 +71,7 @@
             <br><br>
             <p class="description readonly-description">Signal</p>
             <p class="inputdiv container signal" id="shortSignal"></p>
+            <div class="container"><button class="button" id="shortCopy">COPY</button></div>
         </section>
     </div>
 
@@ -153,11 +155,13 @@
         $("#longTP").bind( "click", function() { Copy( "#longTP" ); });
         $("#longST").bind( "click", function() { Copy( "#longST" ); });
         $("#longSignal").bind( "click", function() { CopySignal( "#longSignal" ); });
+        $("#longCopy").bind( "click", function() { CopySignal( "#longSignal" ); });
 
         $("#shortPP").bind( "click", function() { Copy( "#shortPP" ); });
         $("#shortTP").bind( "click", function() { Copy( "#shortTP" ); });
         $("#shortST").bind( "click", function() { Copy( "#shortST" ); });
         $("#shortSignal").bind( "click", function() { CopySignal( "#shortSignal" ); });
+        $("#shortCopy").bind( "click", function() { CopySignal( "#shortSignal" ); });
     </script>
 </body>
 </html>
