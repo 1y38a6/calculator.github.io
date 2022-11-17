@@ -83,7 +83,7 @@ function Signal( name, coin, price, tp, st )
 
 function Round( num )
 {
-    return Math.round( num * 100000 ) / 100000;
+    return Math.round( num * 100 ) / 100;
 }
 
 function ReplaceDot( str )
